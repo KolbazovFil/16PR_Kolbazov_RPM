@@ -1,0 +1,19 @@
+﻿<Window x:Class="_16PR_Kolbazov_RPM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_16PR_Kolbazov_RPM"
+        mc:Ignorable="d"
+        Title="Заметки" Height="450" Width="800">
+    <Grid>
+        <ListBox Name="NotesListBox" SelectionChanged="NotesListBox_SelectionChanged"/>
+        <StackPanel Orientation="Vertical" Height="179" VerticalAlignment="Bottom">
+            <TextBox Name="TitleTextBox" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+            <TextBox Name="ContentTextBox" Height="100" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+            <Button Name="AddNoteButton" Content="Добавить заметку" ToolTip="Нажмите, чтобы добавить заметку" Click="AddNoteButton_Click" Background="LightYellow"/>
+            <Button Name="EditNoteButton" Content="Редактировать заметку" ToolTip="Нажмите, чтобы редактировать заметку" IsEnabled="False" Click="EditNoteButton_Click" Background="LightYellow"/>
+            <Button Name="DeleteNoteButton" Content="Удалить заметку" ToolTip="Нажмите, чтобы удалить заметку" IsEnabled="False" Click="DeleteNoteButton_Click" Background="LightYellow"/>
+        </StackPanel>
+    </Grid>
+</Window>
