@@ -7,13 +7,23 @@
         mc:Ignorable="d"
         Title="Заметки" Height="450" Width="800">
     <Grid>
-        <ListBox Name="NotesListBox" SelectionChanged="NotesListBox_SelectionChanged"/>
-        <StackPanel Orientation="Vertical" Height="179" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="245*"/>
+            <RowDefinition Height="172"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="NotesListBox" SelectionChanged="NotesListBox_SelectionChanged" Grid.Row="1"/>
+        <StackPanel Orientation="Vertical" Height="170" VerticalAlignment="Top" Grid.Row="2">
             <TextBox Name="TitleTextBox" SpellCheck.IsEnabled="True" Language="ru-ru"/>
             <TextBox Name="ContentTextBox" Height="100" SpellCheck.IsEnabled="True" Language="ru-ru"/>
-            <Button Name="AddNoteButton" Content="Добавить заметку" ToolTip="Нажмите, чтобы добавить заметку" Click="AddNoteButton_Click" Background="LightYellow"/>
-            <Button Name="EditNoteButton" Content="Редактировать заметку" ToolTip="Нажмите, чтобы редактировать заметку" IsEnabled="False" Click="EditNoteButton_Click" Background="LightYellow"/>
-            <Button Name="DeleteNoteButton" Content="Удалить заметку" ToolTip="Нажмите, чтобы удалить заметку" IsEnabled="False" Click="DeleteNoteButton_Click" Background="LightYellow"/>
+            <Button Name="AddNoteButton" Content="Добавить заметку" ToolTip="Нажмите, чтобы добавить заметку" Click="AddNoteButton_Click" Background="LightYellow" FontFamily="Arial"/>
+            <Button Name="EditNoteButton" Content="Редактировать заметку" ToolTip="Нажмите, чтобы редактировать заметку" IsEnabled="False" Click="EditNoteButton_Click" Background="LightYellow" FontFamily="Arial"/>
+            <Button Name="DeleteNoteButton" Content="Удалить заметку" ToolTip="Нажмите, чтобы удалить заметку" IsEnabled="False" Click="DeleteNoteButton_Click" Background="LightYellow" FontFamily="Arial"/>
         </StackPanel>
+        
+        <TextBlock Text="Разработчик: Колбазов Филипп Дионисович группы 2озИСИП-1623" HorizontalAlignment="Center" FontSize="20" Foreground="CadetBlue" 
+                   FontFamily="Arial" VerticalAlignment="Center" Grid.Row="0"/>
+        <TextBlock Text="Заголовок" FontSize="14" FontFamily="arial" Foreground="Gray" Name="txtBlock" Grid.Row="2" HorizontalAlignment="Left" Width="100" 
+                 Height="15" VerticalAlignment="Top" IsHitTestVisible="False"/>
     </Grid>
 </Window>

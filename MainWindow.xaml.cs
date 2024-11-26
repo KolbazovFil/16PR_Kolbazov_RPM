@@ -6,6 +6,15 @@ namespace _16PR_Kolbazov_RPM
     public partial class MainWindow : Window
     {
         public ObservableCollection<Note> Notes { get; set; }
+        public class Note
+        {
+            public string Title { get; set; }
+            public string Content { get; set; }
+            public override string ToString()
+            {
+                return $"{Title} - {Content}";
+            }
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -44,17 +53,6 @@ namespace _16PR_Kolbazov_RPM
                 ClearInputFields();
             }
         }
-        public class Note
-        {
-            public string Title { get; set; }
-            public string Content { get; set; }
-            public override string ToString()
-            {
-                return $"{Title} - {Content}";
-            }
-        }
-
-
         private void NotesListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if (NotesListBox.SelectedItem is Note selectedNote)
@@ -75,6 +73,15 @@ namespace _16PR_Kolbazov_RPM
         {
             TitleTextBox.Clear();
             ContentTextBox.Clear();
+        }
+        private void CleanTitleTextBlock()
+        {
+            if (NotesListBox.SelectedItem is Note selectedNote)
+            {
+                Notes.Remove(selectedNote);
+                ClearInputFields();
+                CleanTitleTextBlock(); // Очищаем заголовок после удаления заметки
+            }
         }
     }
 }
