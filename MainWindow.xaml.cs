@@ -70,11 +70,6 @@ namespace _16PR_Kolbazov_RPM
                 DeleteNoteButton.IsEnabled = false;
             }
         }
-        private void ClearInputFields()
-        {
-            TitleTextBox.Clear();
-            ContentTextBox.Clear();
-        }
        
         // Для заголовка
         private void CleanTitleTextBlock()
@@ -107,6 +102,12 @@ namespace _16PR_Kolbazov_RPM
             {
                 TitlePlaceHolder.Visibility = Visibility.Visible;    // Показывает плейсхолдер, если текст пуст
             }
+        }
+        // Для текста
+        private void ClearInputFields()
+        {
+            TitleTextBox.Clear();
+            ContentTextBox.Clear();
         }
         private void ContentTextBox_GotFocus(object sender, RoutedEventArgs e)
         {

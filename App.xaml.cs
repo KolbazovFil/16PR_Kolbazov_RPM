@@ -8,9 +8,6 @@ using System.Windows;
 
 namespace _16PR_Kolbazov_RPM
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
     public partial class App : Application
     {
     }
