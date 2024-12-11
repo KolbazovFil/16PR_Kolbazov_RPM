@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace _16PR_Kolbazov_RPM
 {
@@ -74,6 +75,8 @@ namespace _16PR_Kolbazov_RPM
             TitleTextBox.Clear();
             ContentTextBox.Clear();
         }
+       
+        // Для заголовка
         private void CleanTitleTextBlock()
         {
             if (NotesListBox.SelectedItem is Note selectedNote)
@@ -81,6 +84,50 @@ namespace _16PR_Kolbazov_RPM
                 Notes.Remove(selectedNote);
                 ClearInputFields();
                 CleanTitleTextBlock(); // Очищаем заголовок после удаления заметки
+            }
+        }
+        private void TitleTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TitlePlaceHolder.Visibility = Visibility.Collapsed; // Скрывает плейсхолдер при фокусе
+        }
+        private void TitleTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TitleTextBox.Text))
+            {
+                TitlePlaceHolder.Visibility = Visibility.Visible;   // Показывает плейсхолдерб если текст пуст
+            }
+        }
+        private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TitleTextBox.Text))
+            {
+                TitlePlaceHolder.Visibility = Visibility.Collapsed; // Скрывает плейсхолдер, если текст введен
+            }
+            else
+            {
+                TitlePlaceHolder.Visibility = Visibility.Visible;    // Показывает плейсхолдер, если текст пуст
+            }
+        }
+        private void ContentTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ContentPlaceHolder.Visibility = Visibility.Collapsed;
+        }
+        private void ContentTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ContentTextBox.Text))
+            {
+                ContentPlaceHolder.Visibility = Visibility.Visible;   // Показывает плейсхолдерб если текст пуст
+            }
+        }
+        private void ContentTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(ContentTextBox.Text))
+            {
+                ContentPlaceHolder.Visibility = Visibility.Collapsed; // Скрывает плейсхолдер, если текст введен
+            }
+            else
+            {
+                ContentPlaceHolder.Visibility = Visibility.Visible;    // Показывает плейсхолдер, если текст пуст
             }
         }
     }
