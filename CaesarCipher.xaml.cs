@@ -18,7 +18,7 @@ namespace _16PR_Kolbazov_RPM
         {
             if (int.TryParse(ShiftTextBox.Text, out int newShift))
             {
-                shift = newShift;
+                shift = newShift % 33; // Учитываем размер русского алфавита
                 EncryptText();
             }
             else
@@ -40,8 +40,8 @@ namespace _16PR_Kolbazov_RPM
             {
                 if (char.IsLetter(c))
                 {
-                    char offset = char.IsUpper(c) ? 'A' : 'a';
-                    char encryptedChar = (char)((((c + shift) - offset) % 26) + offset);
+                    char offset = char.IsUpper(c) ? 'А' : 'а'; // Используем русские буквы
+                    char encryptedChar = (char)((((c + shift) - offset) % 33 + 33) % 33 + offset);
                     result += encryptedChar;
                 }
                 else

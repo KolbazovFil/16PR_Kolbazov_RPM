@@ -9,13 +9,13 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Введите текст:" FontSize="14" Margin="5,0,0,0"/>
-            <TextBox Name="InputTextBox" Height="30" FontSize="14" TextChanged="InputTextBox_TextChanged"/>
+            <TextBox Name="InputTextBox" Height="30" FontSize="14" TextChanged="InputTextBox_TextChanged" Language="ru-ru"/>
 
             <TextBlock Text="Зашифрованный текст:" FontSize="14" Margin="5,0,0,0"/>
-            <TextBox Name="OutputTextBox" Height="30" FontSize="14" IsReadOnly="True"/>
+            <TextBox Name="OutputTextBox" Height="30" FontSize="14" IsReadOnly="True" Language="ru-ru"/>
 
             <TextBlock Text="Сдвиг:" FontSize="14" Margin="5,0,0,0"/>
-            <TextBox Name="ShiftTextBox" Height="30" FontSize="14" TextChanged="ShiftTextBox_TextChanged"/>
+            <TextBox Name="ShiftTextBox" Height="30" FontSize="14" TextChanged="ShiftTextBox_TextChanged" Language="ru-ru"/>
         </StackPanel>
     </Grid>
 </Window>
