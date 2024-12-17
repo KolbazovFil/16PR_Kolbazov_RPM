@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-
 namespace _16PR_Kolbazov_RPM
 {
     public partial class CaesarCipher : Window
